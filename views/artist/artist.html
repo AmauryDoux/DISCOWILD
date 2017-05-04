@@ -6,14 +6,38 @@
     </div>
     <div class="artistDescription">
         <ul>
-            <li>Name: {{ $ctrl.artistName}}</li>
+            <li>Name: {{ artistName}}</li>
             <li>Profile: {{ artistProfile}}</li>
-            <span ng-repeat="url in artistSites">
-            <li>Sites: {{url}}</li>
-            </span>
-            <span ng-repeat = "member in artistMembers">
-            <li>Members: {{artistMembers[index]}}</li>
-            </span>
+
+            <div>Related sites:
+                <span ng-repeat="url in artistSites">
+                    <li>*** {{url}}</li>
+                </span>
+            </div>
+
+            <div>Members:
+                <span ng-repeat="member in artistMembers">
+                    <li>*** {{member.name}}</li>
+                </span>
+            </div>
         </ul>
     </div>
+</div>
+
+
+<div id="releases">
+    <div>
+        <table>
+            <tr ng-repeat= "release in releasesArr">
+                <td>{{release}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
 </div>
