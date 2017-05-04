@@ -29,13 +29,13 @@
     <div>
         <table>
             <tr ng-repeat= "release in releasesArr">
-                <td>{{release}}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+
+                <td>{{release.artist}}</td>
+                <td>{{release.label}}</td>
+                <td><img src="{{release.thumb}}"</td>
+                <td>{{release.title}}</td>
+                <td>{{release.type}}</td>
+                <td>{{release.year}}</td>
             </tr>
         </table>
     </div>

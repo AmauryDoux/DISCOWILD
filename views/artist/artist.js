@@ -25,6 +25,12 @@ function Artist($scope, $resource) {
     request = $resource('https://api.discogs.com/artists/976494/releases', AUTH); // On initialise la variable avec un resource sur l'url
     request.get().$promise.then(function(releases) { // Dans Data l'objet JSON
         $scope.releasesArr = releases.releases;
+        $scope.releasesLabel = releases.label;
+        $scope.releasesImg = releases.thumb;
+        $scope.releasesTitle = releases.title;
+        $scope.releasesType = releases.type;
+        $scope.releasesYear = releases.year;
+
         console.log(releases);
     });
 
