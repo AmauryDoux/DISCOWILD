@@ -1,3 +1,17 @@
-<div id="home-root">
-
+<div id="label-root">
+    <div class="labelImages">
+        <img ng-src={{labelImg}} />
+    </div>
+    <div class="labelDescription">
+        <ul>
+            <li>Name: {{ $ctrl.labelName}}</li>
+            <li>Profile: {{ labelProfile}}</li>
+            <span ng-repeat="url in labelSites">
+            <li>Sites: {{url}}</li>
+            </span>
+            <span ng-repeat = "member in artistMembers">
+            <li>Members: {{artistMembers[index]}}</li>
+            </span>
+        </ul>
+    </div>
 </div>

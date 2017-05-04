@@ -23,7 +23,6 @@ app.component("home", {
 });
 
 function Home($scope, $resource) {
-
     var _this = this;
 
     for (let i = 0; i < 2; i++) {
@@ -33,6 +32,13 @@ function Home($scope, $resource) {
         request.get().$promise.then(function(artist) { // Dans Data l'objet JSON
             console.log("Hello " + artist.name); // On peut accéder aux propriétes de l'objet
             artistsData.push(artist);
+
+            let releases = $resource('https://api.discogs.com/artists/' + defaultArtists[i] + "/releases", AUTH);
+
+            request.get().$promise.then(function(artist) { // Dans Data l'objet JSON
+                console.log("Hello " + artist.name); // On peut accéder aux propriétes de l'objet
+                artistsData.push(artist);
+            });
         });
     }
 
