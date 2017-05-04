@@ -4,11 +4,11 @@
         <h3>Be on the right tracks!</h3>
     </div>
 
-    <div id="artists-list-container">
-        <div ng-repeat="artist in artistsData" class="">
-            <td><img ng-src="{{artist.images[0].uri150}}" alt="Profil" /></td>
-            <td><a href="{{artist.uri}}">{{ artist.name }}</a></td>
-            <td>Membres actifs : {{numberOfMembers(artist)}}</td>
+    <div id="artists-list-container" class="row">
+        <div ng-repeat="artist in artistsData" class="artist-container col s6">
+            <div><img ng-src="{{artist.images[0].uri150}}" alt="Profil" /></div>
+            <div><a href="{{artist.uri}}">{{ artist.name }}</a></div>
+            <div>Membres actifs : {{numberOfMembers(artist)}}</div>
         </div>
     </div>
 </div>
