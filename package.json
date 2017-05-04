@@ -5,6 +5,7 @@
   "main": "router.js",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-resource": "^1.6.4",
     "angular-ui-router": "^1.0.0"
   },
   "devDependencies": {},
