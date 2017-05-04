@@ -1,8 +1,14 @@
 <div id="home-root">
-    <h1>DISCOWILD</h1>
-    <h3>Be on the right tracks!</h3>
+    <div id="home-header">
+        <h1>DISCOWILD</h1>
+        <h3>Be on the right tracks!</h3>
+    </div>
 
     <div id="artists-list-container">
-
+        <div ng-repeat="artist in artistsData" class="">
+            <td><img ng-src="{{artist.images[0].uri150}}" alt="Profil" /></td>
+            <td><a href="{{artist.uri}}">{{ artist.name }}</a></td>
+            <td>Membres actifs : {{numberOfMembers(artist)}}</td>
+        </div>
     </div>
 </div>
