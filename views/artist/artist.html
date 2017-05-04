@@ -1,4 +1,19 @@
+<link rel="stylesheet" href="style/main.css">
+
 <div id="artist-root">
-    <p ng-resource="$ctrl.Artist">{{name}}</p>
+    <div class="artistImages">
+        <img ng-src={{artistImg}} />
+    </div>
+    <div class="artistDescription">
+        <ul>
+            <li>Name: {{ $ctrl.artistName}}</li>
+            <li>Profile: {{ artistProfile}}</li>
+            <span ng-repeat="url in artistSites">
+            <li>Sites: {{url}}</li>
+            </span>
+            <span ng-repeat = "member in artistMembers">
+            <li>Members: {{artistMembers[index]}}</li>
+            </span>
+        </ul>
+    </div>
 </div>
-test
