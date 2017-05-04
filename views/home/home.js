@@ -2,8 +2,8 @@
 
 var defaultArtists = [
     976494, // Chinese man
-    609563, // Paramore
     6378, // Gorillaz
+    609563, // Paramore
     2159610, // TSR
     1003, // Muse
     2770, // Air
@@ -13,6 +13,8 @@ var defaultArtists = [
     2669201 // Stand High Patrol
 ];
 
+var artistsData = [];
+
 var app = angular.module("discowild");
 
 app.component("home", {
@@ -21,6 +23,7 @@ app.component("home", {
 });
 
 function Home($scope, $resource) {
+<<<<<<< HEAD
     var home = this;
     var artist = $resource('https://api.discogs.com/artists/2159610',AUTH); // On initialise la variable avec un resource sur l'url
     artist.get().$promise.then(function(data) { // Dans Data l'objet JSON
@@ -28,3 +31,26 @@ function Home($scope, $resource) {
         home.name = data.name;
     });
 }
+=======
+    var _this = this;
+
+    for (let i = 0; i < 2; i++) {
+        let request = $resource('https://api.discogs.com/artists/' + defaultArtists[i], AUTH);
+        // On initialise la variable avec un resource sur l'url
+
+        request.get().$promise.then(function(artist) { // Dans Data l'objet JSON
+            console.log("Hello " + artist.name); // On peut accéder aux propriétes de l'objet
+            artistsData.push(artist);
+        });
+    }
+
+    $scope.artistsData = artistsData;
+    $scope.numberOfMembers = function(artist) {
+        var n = 0;
+        for (let i = 0; i < artist.members.length; i++) {
+            if (artist.members[i].active) n++;
+        }
+        return n;
+    }
+}
+>>>>>>> ef9e5cf1f541b30703b4e8bfc868ef1e7aac386c
