@@ -19,7 +19,10 @@ body {
 }
 
 #artists-list-container {
+    padding-top: 20px;
     font: 20px Arial;
 }
 
-#artist-container {}
+.artist-container {
+    text-align: center;
+}

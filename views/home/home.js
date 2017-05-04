@@ -23,7 +23,6 @@ app.component("home", {
 });
 
 function Home($scope, $resource) {
-
     var _this = this;
 
     for (let i = 0; i < 2; i++) {
