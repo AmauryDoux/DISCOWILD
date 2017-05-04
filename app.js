@@ -1,5 +1,5 @@
 "use strict";
-const AUTH = { key: "AAoLKTHGZuopVNjzgtQl", secret: "nKmgVgSeMKlqYzyxpGVEDmwcLjPYrgak" }
+const AUTH = { key: "AAoLKTHGZuopVNjzgtQl", secret: "nKmgVgSeMKlqYzyxpGVEDmwcLjPYrgak" };
 
 var app = angular.module("discowild", ["ui.router", "ngResource"]);
 
