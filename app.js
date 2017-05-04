@@ -1,11 +1,9 @@
 "use strict";
 
-angular.module("discowild", [
-    // les dépendances externes
-    "ui.router"
-])
 
-.config(function($stateProvider, $urlRouterProvider) {
+angular.module("discowild", ["ui.router"]
+
+).config(function($stateProvider, $urlRouterProvider) {
     var states = [{
             name: "home",
             url: "/home",
