@@ -23,15 +23,7 @@ app.component("home", {
 });
 
 function Home($scope, $resource) {
-<<<<<<< HEAD
-    var home = this;
-    var artist = $resource('https://api.discogs.com/artists/2159610',AUTH); // On initialise la variable avec un resource sur l'url
-    artist.get().$promise.then(function(data) { // Dans Data l'objet JSON
-        console.log("Hello " + data.name); // On peut accéder aux propriétes de l'objet
-        home.name = data.name;
-    });
-}
-=======
+
     var _this = this;
 
     for (let i = 0; i < 2; i++) {
@@ -53,4 +45,3 @@ function Home($scope, $resource) {
         return n;
     }
 }
->>>>>>> ef9e5cf1f541b30703b4e8bfc868ef1e7aac386c
