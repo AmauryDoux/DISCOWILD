@@ -1,11 +1,9 @@
 "use strict";
 
-angular.module("discowild", [
-    // les dépendances externes
-    "ui.router"
-])
 
-.config(function($stateProvider, $urlRouterProvider) {
+var app = angular.module("discowild", ["ui.router", "ngResource"]);
+
+app.config(function($stateProvider, $urlRouterProvider) {
     var states = [{
             name: "home",
             url: "/home",
@@ -25,11 +23,10 @@ angular.module("discowild", [
             name: "label",
             url: "/label",
             component: "label"
-        },
-
+        }
     ];
     $urlRouterProvider.otherwise("/home"); // Page par défaut
     states.forEach(function(state) {
         $stateProvider.state(state);
-    })
+    });
 });
