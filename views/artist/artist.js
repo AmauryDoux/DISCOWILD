@@ -10,12 +10,18 @@ app.component("artist", {
 });
 
 function Artist($scope, $resource) {
-    var artist = $resource('https://api.discogs.com/artists/2159610'); // On initialise la variable avec un resource sur l'url
+    var request = $resource('https://api.discogs.com/artists/976494',AUTH); // On initialise la variable avec un resource sur l'url
 
-    artist.get().$promise.then(function(data) { // Dans Data l'objet JSON
-
-
-        console.log("Hello " + data.name); // On peut accéder aux propriétes de l'objet
-
+    request.get().$promise.then(function(artist) { // Dans Data l'objet JSON
+    console.log(artist);
+        $scope.artistName = artist.name;
+        $scope.artistProfile = artist.profile;
+        $scope.artistImg = artist.images[0].uri150;
+        $scope.artistSites = artist.urls;
+        $scope.artistMembers = artist.members;
     });
 }
+
+
+
+//console.log("Hello " + artist.name); // On peut accéder aux propriétes de l'objet
