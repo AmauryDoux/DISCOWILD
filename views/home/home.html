@@ -13,13 +13,15 @@
                     <div><img ng-src="{{artist.images[0].uri150 || 'http://placehold.it/150x150?text=X'}}" alt="Profil" /></div>
 
                     <div>
-                        <a ui-sref="artist({id: artist.id})" }}>{{ artist.name }}</a>
+                        <a ui-sref="artist({id: artist.id})">{{ artist.name }}</a>
                     </div>
 
                     <div>Membres actifs : {{numberOfMembers(artist)}}</div>
 
-                    <div id=" artist-releases ">
-                        <div ng-repeat="release in artist.releases "><b>{{release.title}}</b> - {{release.label || "Indépendant "}}</div>
+                    <div id="artist-releases">
+                        <div ng-repeat="release in artist.releases ">
+                            <b><a ui-sref="release({id: release.id})">{{release.title}}</a></b> - {{release.label || "Indépendant "}}
+                        </div>
                     </div>
                 </div>
             </div>

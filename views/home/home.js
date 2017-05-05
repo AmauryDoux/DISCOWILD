@@ -25,18 +25,17 @@ app.component("home", {
 function Home($scope, $resource) {
     var _this = this;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < defaultArtists.length; i++) {
         let request = $resource('https://api.discogs.com/artists/' + defaultArtists[i], AUTH);
         // On initialise la variable avec un resource sur l'url
 
         request.get().$promise.then(function(artist) { // Dans artist l'objet JSON que l'on récupére
-            console.log("Hello " + artist.name); // On peut accéder aux propriétes de l'objet
-
             let options = "?sort=year&sort_order=desc&page=1&per_page=3"
             let releasesRequest = $resource('https://api.discogs.com/artists/' + defaultArtists[i] + "/releases" + options, AUTH);
 
             releasesRequest.get().$promise.then(function(releases) {
                 artist.releases = releases.releases; // On prend ses 3 derniers sons
+                console.log(artist.releases);
             });
 
             artistsData.push(artist);

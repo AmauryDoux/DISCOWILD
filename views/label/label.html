@@ -1,40 +1,42 @@
 <div id="label-root">
 
-    <div class="labelImages">
-        <img ng-src="{{labelImg || 'http://placehold.it/150x150?text=X'}}" />
+    <div id="label-header">
+        <div id="label-image-container">
+            <img ng-src="{{labelImg || 'http://placehold.it/150x150?text=X'}}" />
+        </div>
+
+        <div id="label-description-container">
+            <ul>
+                <li><b>Label Name :</b> {{labelName || 'No label available'}}</li>
+                <li><b>Contact Info :</b> {{labelContact || 'No Contact info'}}</li>
+                <li><b>Profile :</b> {{ labelProfile || 'No profile available'}}</li>
+                <li>
+                    <span><b>Related sites :</b></span>
+                    <ul>
+                        <li ng-repeat="url in labelSites"><a href="{{url}}">{{url}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <div class="labelDescription">
-        <ul>
-            <li>Label Name: {{labelName || 'No label available'}}</li>
-            <li>Contact Info: {{labelContact || 'No Contact info'}}</li>
-            <li>Profile: {{ labelProfile || 'No profile available'}}</li>
-            <div>Related sites:
-                <span ng-repeat="url in labelSites">
-                    <li>*** {{url || 'No urls available'}}</li>
-                </span>
+    <div id="label-body" class="container">
+        <div class="row">
+            <div id="label-releases" class="col s8 row">
+                <div ng-repeat="release in labelReleases" class="release-container col s6">
+                    <img ng-src="{{release.thumb}}" />
+                    <div>
+                        <a ui-sref="release({id: release.id})">{{release.title}}</a><br /> {{release.artist}}
+                    </div>
+                </div>
             </div>
-            <div>
-                <span>Members:</span>
-                <span ng-repeat="member in artistMembers">
-                <span>{{member || 'No members available'}}</span>
-                </span>
+
+            <div id="label-members" class="col s4">
+                <div ng-repeat="member in labelMembers">
+                    <span>{{member || 'No members available'}}</span>
+                </div>
             </div>
-            <span>Releases:</span>
-            <div>
-                    <span ng-repeat="release in labelReleases.releases">
-                        <img ng-src="{{release.thumb}}">
-                        <div>
-                            {{release.artist}} <br />
-                        </div>
-                        <div>
-                            {{release.title}}
-                        </div>
 
-                    </span>
-
-
-            </div>
-        </ul>
+        </div>
     </div>
 </div>

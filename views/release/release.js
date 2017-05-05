@@ -9,7 +9,6 @@ app.component("release", {
 
 function Release($scope, $resource, $sce, $stateParams) {
     var id = $stateParams.id;
-    console.log(id);
     var _this = this;
 
     $resource("http://api.discogs.com/releases/" + id, AUTH).get().$promise
@@ -26,18 +25,19 @@ function Release($scope, $resource, $sce, $stateParams) {
 
             if (release.styles) $scope.styleStr = release.styles.join(", ");
 
-            var newVids = [];
-            release.videos.map(function(video) {
-                newVids.push(video);
-            });
+            if (release.videos) {
+                var newVids = [];
+                release.videos.map(function(video) {
+                    newVids.push(video);
+                });
 
-            for (let i = 0; i < newVids.length; i++) {
-                newVids[i].uri = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + newVids[i].uri.split("=")[1]);
+                for (let i = 0; i < newVids.length; i++) {
+                    newVids[i].uri = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + newVids[i].uri.split("=")[1]);
+                }
+
+                release.videos = newVids;
             }
 
-            release.videos = newVids;
-
-            console.log(release.videos);
             $scope.release = release;
         });
 }

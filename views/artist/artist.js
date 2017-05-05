@@ -21,10 +21,9 @@ function Artist($scope, $resource, $stateParams) {
         $scope.artistImg = artist.images[0].uri150;
         $scope.artistSites = artist.urls;
         $scope.artistMembers = artist.members;
-
-
     });
-    request = $resource('https://api.discogs.com/artists/" + id +"/releases', AUTH); // On initialise la variable avec un resource sur l'url
+
+    request = $resource('https://api.discogs.com/artists/' + id + '/releases', AUTH); // On initialise la variable avec un resource sur l'url
     request.get().$promise.then(function(releases) { // Dans Data l'objet JSON
         $scope.releasesArr = releases.releases;
         $scope.releasesLabel = releases.label;
