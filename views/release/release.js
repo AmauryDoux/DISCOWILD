@@ -1,1 +1,42 @@
 "use strict";
+
+var app = angular.module("discowild");
+
+app.component("release", {
+    templateUrl: "views/release/release.html",
+    controller: Release
+});
+
+function Release($scope, $resource, $sce) {
+
+    var _this = this;
+
+    $resource("http://api.discogs.com/releases/2850360", AUTH).get().$promise
+        .then(function(release) {
+            $scope.artistsStr = release.artists.map(function(artist) {
+                return artist.name;
+            }).join(", ");
+
+            $scope.labelsStr = release.labels.map(function(label) {
+                return label.name;
+            }).join(", ");
+
+            $scope.genreStr = release.genres.join(", ");
+
+            $scope.styleStr = release.styles.join(", ");
+
+            var newVids = [];
+            release.videos.map(function(video) {
+                newVids.push(video);
+            });
+
+            for (let i = 0; i < newVids.length; i++) {
+                newVids[i].uri = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + newVids[i].uri.split("=")[1]);
+            }
+
+            release.videos = newVids;
+
+            console.log(release.videos);
+            $scope.release = release;
+        });
+}
