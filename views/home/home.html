@@ -1,21 +1,33 @@
 <div id="home-root">
     <div id="home-header">
-        <h1><B>DISCOWILD</B></h1>
-        <p>Be on the right tracks!</p>
+        <h1>
+            <B>DISCOWILD</B>
+        </h1>
+        <h4>Be on the right tracks!</h4>
     </div>
 
-<body>
-    <div id="artists-list-container" class="row">
-        <div ng-repeat="artist in artistsData" class="artist-container col s3 offset-s2 ">
-            <div><img ng-src="{{artist.images[0].uri150}}" alt="Profil" /></div>
-            <div><a href="{{artist.uri}}">{{ artist.name }}</a></div>
-            <div>Membres actifs : {{numberOfMembers(artist)}}</div>
+    <body>
+        <div id="artists-list-container" class="row">
+            <div ng-repeat="artist in artistsData" class="artist-container col s6">
+                <div class="artist-inner">
+                    <div><img ng-src="{{artist.images[0].uri150 || 'http://placehold.it/150x150?text=X'}}" alt="Profil" /></div>
+
+                    <div>
+                        <a ui-sref="artist({id: artist.id})" }}>{{ artist.name }}</a>
+                    </div>
+
+                    <div>Membres actifs : {{numberOfMembers(artist)}}</div>
+
+                    <div id=" artist-releases ">
+                        <div ng-repeat="release in artist.releases "><b>{{release.title}}</b> - {{release.label || "Indépendant "}}</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-     <div id="home-footer">
-        <p>el footer de l'enfer</p>
-    </div>
+        <div id="home-footer ">
+            <p>el footer de l'enfer</p>
+        </div>
 
-</body>
+    </body>
 </div>

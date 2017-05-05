@@ -1,17 +1,40 @@
 <div id="label-root">
+
     <div class="labelImages">
-        <img ng-src={{labelImg}} />
+        <img ng-src="{{labelImg || 'http://placehold.it/150x150?text=X'}}" />
     </div>
+
     <div class="labelDescription">
         <ul>
-            <li>Name: {{ $ctrl.labelName}}</li>
-            <li>Profile: {{ labelProfile}}</li>
-            <span ng-repeat="url in labelSites">
-            <li>Sites: {{url}}</li>
-            </span>
-            <span ng-repeat = "member in artistMembers">
-            <li>Members: {{artistMembers[index]}}</li>
-            </span>
+            <li>Label Name: {{labelName || 'No label available'}}</li>
+            <li>Contact Info: {{labelContact || 'No Contact info'}}</li>
+            <li>Profile: {{ labelProfile || 'No profile available'}}</li>
+            <div>Related sites:
+                <span ng-repeat="url in labelSites">
+                    <li>*** {{url || 'No urls available'}}</li>
+                </span>
+            </div>
+            <div>
+                <span>Members:</span>
+                <span ng-repeat="member in artistMembers">
+                <span>{{member || 'No members available'}}</span>
+                </span>
+            </div>
+            <span>Releases:</span>
+            <div>
+                    <span ng-repeat="release in labelReleases.releases">
+                        <img ng-src="{{release.thumb}}">
+                        <div>
+                            {{release.artist}} <br />
+                        </div>
+                        <div>
+                            {{release.title}}
+                        </div>
+
+                    </span>
+
+
+            </div>
         </ul>
     </div>
 </div>
