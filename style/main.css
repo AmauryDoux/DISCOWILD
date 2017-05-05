@@ -88,3 +88,33 @@
     height: 200px;
     margin-bottom: 20px;
 }
+
+
+/* Page Label */
+
+#label-header {
+    display: flex;
+    flex-direction: right;
+    background-color: #eddeb1;
+}
+
+#label-body {
+    margin: 0;
+    text-align: center;
+}
+
+#label-image-container {
+    margin: 50px 20px 0px 5%;
+}
+
+#label-description-container {
+    margin: 0px 0px 0px 10px;
+}
+
+#label-releases {
+    background-color: #e0d4b5;
+}
+
+.release-container {
+    margin: 10px 0px 5px 0px;
+}

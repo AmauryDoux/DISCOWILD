@@ -10,22 +10,14 @@ app.component("label", {
 
 function Label($scope, $resource, $stateParams) {
     var id = $stateParams.id;
-    var request = $resource('https://api.discogs.com/artists/' + id, AUTH); // On initialise la variable avec un resource sur l'url
+    var request = $resource('https://api.discogs.com/artists/' + id, AUTH); // On initialise la requete  avec un resource sur l'url
 
-    request.get().$promise.then(function(artist) { // Dans Data l'objet JSON
-        //console.log(artist);
-        $scope.artistImg = artist.images[0].uri150;
-        $scope.artistMembers = artist.members.name;
-    });
-
-
-    request = $resource('https://api.discogs.com/labels/' + id, AUTH); // On initialise la variable avec un resource sur l'url
-    request.get().$promise.then(function(label) { // Dans Data l'objet JSON
-        //console.log(label); // On peut accéder aux propriétes de l'objet
+    request = $resource('https://api.discogs.com/labels/' + id, AUTH);
+    request.get().$promise.then(function(label) {
         $scope.labelName = label.name;
         $scope.labelContact = label.contact_info;
         $scope.labelProfile = label.profile;
-        //console.log(label.images);
+        $scope.labelMembers = label.groups;
         if (label.images) {
             $scope.imgScr = label.images[0].uri150;
 
@@ -34,13 +26,11 @@ function Label($scope, $resource, $stateParams) {
             $scope.imgScr = "http://placehold.it/150x150?text=X";
         };
         $scope.labelSites = label.urls;
-
     });
-    request = $resource('https://api.discogs.com/labels/' + id + '/releases', AUTH); // On initialise la variable avec un resource sur l'url
 
-    request.get().$promise.then(function(release) { // Dans Data l'objet JSON
+    request = $resource('https://api.discogs.com/labels/' + id + '/releases', AUTH);
+    request.get().$promise.then(function(release) {
         console.log(release);
-        $scope.labelReleases = release;
-        $scope.releaseImg = release.images[0].uri150;
+        $scope.labelReleases = release.releases;
     });
 }
