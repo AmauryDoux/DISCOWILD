@@ -2,5 +2,5 @@
     <i class="material-icons search-icon">search</i>
     <span style="padding: 5px 12px 0px 5px;"><b>Artiste</b></span>
     <input ng-model="query" ng-keypress="checkKey($event)" placeholder="(e.g : Bob Marley, Azenavour)" id="artist-input" type="text" class="validate">
-    <div id="search-result" style="padding-left: 20px"><a ui-sref="artist({id: id})">{{}}</a></div>
+    <div id="search-result" style="padding-left: 20px"><a ui-sref="artist({id: result.id})">{{result.title}}</a></div>
 </div>
