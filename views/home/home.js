@@ -25,7 +25,7 @@ app.component("home", {
 function Home($scope, $resource) {
     var _this = this;
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < defaultArtists.length; i++) {
         let request = $resource('https://api.discogs.com/artists/' + defaultArtists[i], AUTH);
         // On initialise la variable avec un resource sur l'url
 
