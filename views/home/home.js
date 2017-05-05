@@ -25,7 +25,7 @@ app.component("home", {
 function Home($scope, $resource) {
     var _this = this;
 
-    for (let i = 0; i < defaultArtists.length; i++) {
+    for (let i = 0; i < 2; i++) {
         let request = $resource('https://api.discogs.com/artists/' + defaultArtists[i], AUTH);
         // On initialise la variable avec un resource sur l'url
 
@@ -35,7 +35,6 @@ function Home($scope, $resource) {
 
             releasesRequest.get().$promise.then(function(releases) {
                 artist.releases = releases.releases; // On prend ses 3 derniers sons
-                console.log(artist.releases);
             });
 
             artistsData.push(artist);

@@ -23,6 +23,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             name: "label",
             url: "/label/:id",
             component: "label"
+        }, {
+            name: "search",
+            url: "",
+            component: "search"
         }
     ];
     $urlRouterProvider.otherwise("/home"); // Page par défaut

@@ -47,6 +47,16 @@
     background-color: #9e9e9e;
 }
 
+#artist-input {
+    width: 80%;
+}
+
+.search-icon {
+    font-size: 40px;
+    position: relative;
+    top: 20px;
+}
+
 
 /* Page release */
 

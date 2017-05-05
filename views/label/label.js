@@ -3,12 +3,12 @@
 var app = angular.module("discowild");
 
 app.component("label", {
-
     templateUrl: "views/label/label.html",
     controller: Label
 });
 
 function Label($scope, $resource, $stateParams) {
+    console.log("NEW LABEL");
     var id = $stateParams.id;
     var request = $resource('https://api.discogs.com/artists/' + id, AUTH); // On initialise la requete  avec un resource sur l'url
 

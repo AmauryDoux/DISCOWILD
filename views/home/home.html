@@ -1,35 +1,36 @@
-<div id="home-root">
-    <div id="home-header">
+<div id="home-root" class="container">
+    <div id="home-header" class="row">
         <h1>
             <B>DISCOWILD</B>
         </h1>
         <h4>Be on the right tracks!</h4>
     </div>
 
-    <body>
-        <div id="artists-list-container" class="row">
-            <div ng-repeat="artist in artistsData" class="artist-container col s6">
-                <div class="artist-inner">
-                    <div><img ng-src="{{artist.images[0].uri150 || 'http://placehold.it/150x150?text=X'}}" alt="Profil" /></div>
+    <div id="home-search-container" class="row">
+        <search></search>
+    </div>
 
-                    <div>
-                        <a ui-sref="artist({id: artist.id})">{{ artist.name }}</a>
-                    </div>
+    <div id="artists-list-container" class="row">
+        <div ng-repeat="artist in artistsData" class="artist-container col s6">
+            <div class="artist-inner">
+                <div><img ng-src="{{artist.images[0].uri150 || 'http://placehold.it/150x150?text=X'}}" alt="Profil" /></div>
 
-                    <div>Membres actifs : {{numberOfMembers(artist)}}</div>
+                <div>
+                    <a ui-sref="artist({id: artist.id})">{{ artist.name }}</a>
+                </div>
 
-                    <div id="artist-releases">
-                        <div ng-repeat="release in artist.releases ">
-                            <b><a ui-sref="release({id: release.id})">{{release.title}}</a></b> - {{release.label || "Indépendant "}}
-                        </div>
+                <div>Membres actifs : {{numberOfMembers(artist) || 1}}</div>
+
+                <div id="artist-releases">
+                    <div ng-repeat="release in artist.releases ">
+                        <b><a ui-sref="release({id: release.id})">{{release.title}}</a></b> - {{release.label || "Indépendant "}}
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="home-footer ">
-            <p>el footer de l'enfer</p>
-        </div>
-
-    </body>
+    <div id="home-footer ">
+        <p>el footer de l'enfer</p>
+    </div>
 </div>
