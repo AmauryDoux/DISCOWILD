@@ -9,8 +9,10 @@ app.component("artist", {
     controller: Artist
 });
 
-function Artist($scope, $resource) {
-    var request = $resource('https://api.discogs.com/artists/976494', AUTH); // On initialise la variable avec un resource sur l'url
+function Artist($scope, $resource, $stateParams) {
+    var id = $stateParams.id;
+
+    var request = $resource('https://api.discogs.com/artists/' + id, AUTH); // On initialise la variable avec un resource sur l'url
 
     request.get().$promise.then(function(artist) { // Dans Data l'objet JSON
         //console.log(artist);
@@ -22,7 +24,7 @@ function Artist($scope, $resource) {
 
 
     });
-    request = $resource('https://api.discogs.com/artists/976494/releases', AUTH); // On initialise la variable avec un resource sur l'url
+    request = $resource('https://api.discogs.com/artists/" + id +"/releases', AUTH); // On initialise la variable avec un resource sur l'url
     request.get().$promise.then(function(releases) { // Dans Data l'objet JSON
         $scope.releasesArr = releases.releases;
         $scope.releasesLabel = releases.label;

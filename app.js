@@ -11,17 +11,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
         },
         {
             name: "artist",
-            url: "/artist",
+            url: "/artist/:id",
             component: "artist"
         },
         {
             name: "release",
-            url: "/release",
+            url: "/release/:id",
             component: "release"
         },
         {
             name: "label",
-            url: "/label",
+            url: "/label/:id",
             component: "label"
         }
     ];
