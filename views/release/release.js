@@ -7,11 +7,12 @@ app.component("release", {
     controller: Release
 });
 
-function Release($scope, $resource, $sce) {
-
+function Release($scope, $resource, $sce, $stateParams) {
+    var id = $stateParams.id;
+    console.log(id);
     var _this = this;
 
-    $resource("http://api.discogs.com/releases/2850360", AUTH).get().$promise
+    $resource("http://api.discogs.com/releases/" + id, AUTH).get().$promise
         .then(function(release) {
             $scope.artistsStr = release.artists.map(function(artist) {
                 return artist.name;
@@ -23,7 +24,7 @@ function Release($scope, $resource, $sce) {
 
             $scope.genreStr = release.genres.join(", ");
 
-            $scope.styleStr = release.styles.join(", ");
+            if (release.styles) $scope.styleStr = release.styles.join(", ");
 
             var newVids = [];
             release.videos.map(function(video) {
