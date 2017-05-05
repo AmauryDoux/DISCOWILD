@@ -1,10 +1,3 @@
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
-
 #home-root {
     width: 100%;
     height: 100%;
@@ -28,6 +21,21 @@ body {
 
 .artist-container {
     text-align: center;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    padding: 20px 20px 20px 20px;
+}
+
+.artist-inner {
+    box-shadow: 0px 0px 10px #888888;
+    background-color: #9da38d;
+    height: 100%;
+    padding: 20px 10px 10px 10px;
+}
+
+#artist-releases {
+    font: 16px Arial;
 }
 
 #home-footer {
@@ -37,4 +45,46 @@ body {
     padding-bottom: 2px;
     text-align: center;
     background-color: #9e9e9e;
+}
+
+
+/* Page release */
+
+#release-header {
+    padding-left: 25%;
+    background-color: goldenrod;
+    margin: auto;
+    display: flex;
+    flex-direction: right;
+}
+
+#release-img {
+    margin-left: 10%;
+}
+
+#release-tracklist-container {
+    width: 40%;
+    background-color: gray;
+}
+
+.track-title {
+    color: #efe8ef;
+}
+
+#release-body {
+    display: flex;
+    flex-direction: right;
+}
+
+#release-videos-container {
+    background-color: efe8ef;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+}
+
+.video-container {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
 }
