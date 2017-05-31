@@ -1,13 +1,56 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang='fr' ng-app='discowild'>
+
 <head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="" content="">
-    <meta name="" content="">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset='UTF-8'>
+    <title> Discowild </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
+
 <body>
-    <script src="js/main.js"></script>
+    <header>
+                <div id="home-header">
+                    <div id="title">
+                        <p>
+                            <B>DISCOWILD</B>
+                        </p>
+                    </div>
+                    <div id="text">
+                        <p>Be on the right tracks!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <ui-view></ui-view>
+    <footer>
+        <div id="home-footer">
+            <p>el footer de l'enfer</p>
+        </div>
+    </footer>
+
+    <script src='node_modules/angular/angular.min.js'></script>
+    <script src='node_modules/angular-ui-router/release/angular-ui-router.min.js'></script>
+    <script src='node_modules/angular-resource/angular-resource.min.js'></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+    <script src='app.js'></script>
+
+    <script src="components/search.js"></script>
+
+    <script src="views/home/home.js"></script>
+    <script src="views/label/label.js"></script>
+    <script src="views/release/release.js"></script>
+    <script src="views/artist/artist.js"></script>
+
+    </script>
 </body>
+
 </html>

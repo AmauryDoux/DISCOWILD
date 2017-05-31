@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="style/main.css">
+
+<div id="artist-root">
+
+    <div class="artistImages">
+        <img ng-src={{artistImg}} class="imgArtistPage" />
+    </div>
+    <div class="artistDescription">
+        <ul>
+            <li class="artName">{{artistName}}</li>
+            <hr>
+            <li class="artProfile">Profile: {{ artistProfile}}</li>
+
+            <div class="artRelContainer">
+                <div class="row">
+                    <div class="artRelSites col s6">Related sites:
+                        <span ng-repeat="url in artistSites">
+                            <li class="artUrls">*** <a target="_blank" href="{{url}}"> {{url}}</a></li>
+                        </span>
+                    </div>
+
+                    <div class="artMembers col s6">Members:
+                        <span ng-repeat="member in artistMembers">
+                            <li class="artMemNames">*** {{member.name}}</li>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+        </ul>
+    </div>
+</div>
+<hr>
+
+<div id="releases">
+    <div>
+        <table class="releaseTable">
+            <tr ng-repeat="release in releasesArr">
+                <td><img src="{{release.thumb}}" /></td>
+                <td>{{release.artist}}</td>
+                <td>{{release.label}}</td>
+                <td>{{release.title}}</td>
+                <td>{{release.type}}</td>
+                <td>{{release.year}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,176 @@
+#home-root {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+}
+
+#home-header {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    width: 100%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #333333;
+}
+
+#title {
+    font-size: 28px;
+}
+
+
+#artists-list-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font: 20px Arial;
+}
+
+.artist-container {
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    padding: 20px 20px 20px 20px;
+}
+
+.artist-inner {
+    box-shadow: 0px 0px 10px #888888;
+    height: 100%;
+    padding: 20px 10px 10px 10px;
+}
+
+#artist-releases {
+    font: 16px Arial;
+}
+
+#home-footer {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    width: 100%;
+    margin: auto;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #333333;
+}
+
+#artist-input {
+    width: 80%;
+}
+
+.search-icon {
+    font-size: 40px;
+    position: relative;
+    top: 20px;
+}
+
+
+/* Page release */
+
+#release-header {
+    padding-left: 25%;
+    background-color: goldenrod;
+    margin: auto;
+    display: flex;
+    flex-direction: right;
+}
+
+#release-img {
+    margin-left: 10%;
+}
+
+#release-tracklist-container {
+    width: 40%;
+    background-color: gray;
+}
+
+.track-title {
+    color: #efe8ef;
+}
+
+#release-body {
+    display: flex;
+    flex-direction: right;
+}
+
+#release-videos-container {
+    background-color: efe8ef;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+}
+
+.video-container {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+
+/* Page Label */
+
+#label-header {
+    display: flex;
+    flex-direction: right;
+    background-color: #eddeb1;
+}
+
+#label-body {
+    margin: 0;
+    text-align: center;
+}
+
+#label-image-container {
+    margin: 50px 20px 0px 5%;
+}
+
+#label-description-container {
+    margin: 0px 0px 0px 10px;
+}
+
+#label-releases {
+    background-color: #e0d4b5;
+}
+
+.release-container {
+    margin: 10px 0px 5px 0px;
+}
+
+
+/* Page Artist */
+
+.artistImages {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    background-color: grey;
+}
+
+.imgArtistPage {
+    border-radius: 10%;
+}
+
+.artistDescription {
+    padding: 5%;
+}
+
+.artName {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.artProfile {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 25px;
+}
+
+.artRelSites {
+    font-size: 18px;
+}
+
+.artMembers {
+    font-size: 18px;
+}

@@ -1,0 +1,43 @@
+<div id="release-root">
+
+    <div id="release-header">
+        <div id="release-infos">
+            <h4></h4>
+            <ul>
+                <li><b>Artiste :</b> {{artistsStr}}</li>
+                <li><b>Label :</b> <span ng-repeat="label in release.labels">{{label.name}}</span></li>
+                <li><b>Pays :</b> {{release.country}}</li>
+                <li><b>Date :</b> {{release.year}}</li>
+                <li><b>Genre :</b> {{genreStr}}</li>
+                <li><b>Style :</b> {{styleStr}}</li>
+            </ul>
+        </div>
+        <div id="release-img">
+            <img ng-src="{{release.images[0].uri150 || 'http://placehold.it/150x150?text=X'}}" alt="Album " />
+        </div>
+    </div>
+
+    <div id="release-body">
+        <div id="release-tracklist-container">
+            <table id="release-tracklist">
+                <tr ng-repeat="track in release.tracklist">
+                    <td><b>{{track.position}}</b></td>
+                    <td><span class="track-title"> {{track.title}}</span></td>
+                    <td>{{track.duration}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="release-videos-container" class="container">
+            <h4> Vidéos </h4>
+            <div id="videos-row" class="row">
+                <div ng-repeat="video in release.videos" class="video-container">
+                    <h6>{{video.title}}</h6>
+                    <div class="video-yt-wrapper">
+                        <iframe class="youtube-player" frameborder="0" allowfullscreen="1" title="YouTube video player" ng-src="{{video.uri}}"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
